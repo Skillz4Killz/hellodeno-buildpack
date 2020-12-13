@@ -6,9 +6,10 @@ import {
   contentType,
 } from "https://denopkg.com/syumai/dinatra/mod.ts";
 
-const greeting = "<h1>Hello From Deno on Fly!</h1>";
 
 app(
-  get("/", () => greeting),
-  get("/:id", ({ params }) => greeting + `</br>and hello to ${params.id}`),
+  get("/", (x: unknown) => {
+    console.log(x)
+    return "whatever"
+  }),
 );
